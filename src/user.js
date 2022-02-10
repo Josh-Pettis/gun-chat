@@ -3,8 +3,10 @@ import 'gun/sea';
 import 'gun/axe';
 import { writable } from 'svelte/store';
 
+const server = require('http').createServer().listen(8080);
+
 // Database
-export const db = GUN();
+export const db = GUN({web: server});
 
 // Gun User
 export const user = db.user().recall({sessionStorage: true});
