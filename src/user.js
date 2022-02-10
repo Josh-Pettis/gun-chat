@@ -4,7 +4,7 @@ import 'gun/axe';
 import { writable } from 'svelte/store';
 
 // Database
-export const db = GUN();
+export const db = GUN({peers: [ 'https://decentralize-chat.web.app/']});
 
 // Gun User
 export const user = db.user().recall({sessionStorage: true});
